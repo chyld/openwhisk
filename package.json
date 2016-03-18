@@ -24,6 +24,7 @@
   "homepage": "https://github.com/chyld/openwhisk",
   "dependencies": {
     "bluebird": "^3.3.4",
+    "js-base64": "^2.1.9",
     "request": "^2.69.0"
   },
   "devDependencies": {

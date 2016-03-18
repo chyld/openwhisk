@@ -1,19 +1,26 @@
-'use strict';
+import Request from 'request';
+import Promise from 'bluebird';
+const Base64 = require('js-base64').Base64;
 
-var Request = require('request');
-var Base64 = require('js-base64').Base64;
+module.exports = function (org, space, action, key, body){
+  const url = `https://openwhisk.ng.bluemix.net/api/v1/namespaces/${org}_${space}/actions/${action}?blocking=true`;
+  const encodedKey = Base64.encode(key);
 
-module.exports = function (org, space, action, key, data, cb) {
-  var url = 'https://openwhisk.ng.bluemix.net/api/v1/namespaces/' + org + '_' + space + '/actions/' + action + '?blocking=true';
-  var auth = Base64.encode(key);
-  var o = {
-    url: url,
+  const config = {
+    url,
     method: 'post',
     json: true,
-    body: data,
-    headers: {
-      'Authorization': 'Basic ' + auth
-    }
+    body,
+    headers: {'Authorization': 'Basic ' + encodedKey}
   };
-  Request(o, cb);
+
+  return new Promise((resolve, reject) => {
+    Request(config, (err, response, body) => {
+      if(err){
+        reject({err, response});
+      }else{
+        resolve(body.response.result);
+      }
+    });
+  });
 };
