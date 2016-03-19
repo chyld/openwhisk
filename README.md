@@ -1,6 +1,7 @@
 # openwhisk
 ![OpenWhisk](images/master.png)
 
+[![NPM](https://nodei.co/npm/openwhisk.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/openwhisk/)
 
 [![npm](https://badge.fury.io/js/openwhisk.svg)](https://www.npmjs.com/package/openwhisk)
 [![GitHub](https://img.shields.io/badge/github-code-blue.svg)](https://github.com/chyld/openwhisk)
