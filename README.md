@@ -2,6 +2,11 @@
 ![OpenWhisk](images/master.png)
 
 
+[![npm](https://badge.fury.io/js/openwhisk.svg)](https://www.npmjs.com/package/openwhisk)
+[![GitHub](https://img.shields.io/badge/github-code-blue.svg)](https://github.com/chyld/openwhisk)
+[![Bluemix](https://img.shields.io/badge/bluemix-docs-orange.svg)](https://new-console.ng.bluemix.net/docs/openwhisk/index.html)
+
+
 ## Description
 Easily call OpenWhisk REST microservies.
 
